@@ -19,7 +19,7 @@ MyMAPort=MAPort_6EX80.MAPort_6EX80()
 # MyMAPort.Lamp(0)
 
 # SimLength is the length of the simulation in seconds
-SimLength = 500
+SimLength = 15*60
 
 # In this section of the code, you can implement the control strategy you want to use. 
 # Below is an example of a simple control strategy based on a level condition.
@@ -37,8 +37,8 @@ for i in range(SimLength):
     MyMAPort.WriteValvePosition(Demand)
    
     # We want the water level to be inbetween 300 and 350mm.
-    LowerLevel = 300
-    UpperLevel = 350
+    LowerLevel = 325
+    UpperLevel = 375
 
     # First we read the current water level.
     Height=MyMAPort.ReadHeight()
