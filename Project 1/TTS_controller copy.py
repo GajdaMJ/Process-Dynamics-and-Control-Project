@@ -37,8 +37,8 @@ for i in range(SimLength):
     MyMAPort.WriteValvePosition(Demand)
    
     # We want the water level to be inbetween 300 and 350mm.
-    LowerLevel = 325
-    UpperLevel = 375
+    LowerLevel = 340
+    UpperLevel = 360
 
     # First we read the current water level.
     Height=MyMAPort.ReadHeight()
