@@ -51,7 +51,7 @@ for i, (name, color, time, heights) in enumerate(zip(titles, colors,
     axes[i, 0].plot(time, heights, color=color, linewidth=1.5)
     axes[i, 0].set_title(f"{name}: Height Over Time", fontsize=12, fontweight='bold')
     axes[i, 0].set_xlabel("Time (s)", fontsize=10)
-    axes[i, 0].set_ylabel("Height (cm)", fontsize=10)
+    axes[i, 0].set_ylabel("Height (mm)", fontsize=10)
     axes[i, 0].axhline(y=350, color='red', linestyle='--', linewidth=1, label="Setpoint")
     axes[i, 0].set_ylim(y_min, y_max)
     axes[i, 0].grid(True, linestyle="--", alpha=0.5)
@@ -69,7 +69,7 @@ for i, (name, color, time, heights) in enumerate(zip(titles, colors,
     violin = axes[i, 1].violinplot(heights, showmeans=True, showmedians=True)
     axes[i, 1].set_title(f"{name}: Height Distribution", fontsize=12, fontweight='bold')
     axes[i, 1].set_xlabel(name, fontsize=10)
-    axes[i, 1].set_ylabel("Height (cm)", fontsize=10)
+    axes[i, 1].set_ylabel("Height (mm)", fontsize=10)
     axes[i, 1].set_ylim(y_min, y_max)
     axes[i, 1].grid(True, linestyle="--", alpha=0.5)
 
