@@ -36,7 +36,8 @@ plot_data = [
 ]
 
 fig, axes = plt.subplots(nrows=len(plot_data), ncols=2, figsize=(14, 4 * len(plot_data)+10))
-
+mean_list = []
+stdev_list = []
 for i, (name, datasets, labels, offset) in enumerate(plot_data):
     ax_time = axes[i, 0]
     ax_violin = axes[i, 1]
@@ -65,10 +66,10 @@ for i, (name, datasets, labels, offset) in enumerate(plot_data):
         if steady_vals.size > 0:
             violin_data.append(steady_vals)
 
-    print(f"{name} - violin_data valid entries: {len(violin_data)}")
-
     # Only plot if data is valid
     if len(violin_data) > 0:
+        mean_list.append(np.mean(violin_data))
+        stdev_list.append(np.std(violin_data))
         violin = ax_violin.violinplot(violin_data, showmeans=True, showmedians=True)
         ax_violin.set_title(name, fontsize=18, fontweight='bold')
         ax_violin.set_ylabel("Height (mm)", fontsize=14, fontweight='bold')
@@ -87,6 +88,8 @@ for i, (name, datasets, labels, offset) in enumerate(plot_data):
         ax_violin.text(0.5, 0.5, "No valid data", ha='center', va='center', fontsize=10, fontweight='bold')
         ax_violin.set_axis_off()
 
+for mean, stdev in zip(mean_list, stdev_list):
+    print(f"P & 0.3&{mean:.2f} & {stdev:.2f} \\\ \hline")
 plt.tight_layout() 
 # rect=[0, 0.03, 1, 1]
 plt.savefig("Project 3\\Figures\\Full_Comparison_with_Violin_Plots.png", dpi=500)
