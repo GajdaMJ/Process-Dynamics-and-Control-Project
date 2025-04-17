@@ -1,13 +1,7 @@
 import numpy as np
 
 # Loading Data
-valve_0_3_exp10_PI = np.genfromtxt(
-    'Project 3\\Data\\exp10_valve0.3_PI_v4.csv',
-    delimiter=',',
-    skip_header=29,
-    skip_footer=195,
-    encoding='utf-8'
-)
+valve_0_3_exp10_PI = np.genfromtxt('Project 3\\Data\\exp10_valve0.3_PI_v4.csv', delimiter=',', skip_header=29)
 valve_0_5_exp11_PI = np.genfromtxt('Project 3\\Data\\exp11_valve0.5_PI_v4.csv', delimiter=',', skip_header=29)
 valve_0_3_exp12_PI = np.genfromtxt('Project 3\\Data\\exp12_valve0.3_P.csv', delimiter=',', skip_header=29)
 valve_0_3_exp13_P = np.genfromtxt('Project 3\\Data\\exp13_valve0.3_P.csv', delimiter=',', skip_header=29)
